@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork - 3: Footer Generation</title>
+</head>
+<body>
+    <script>
+
+        generateFooter(
+            ['Номер: +7(777)777-77-77', 'Эл. почта: HomeWork@gmail.com', 
+            'Адрес: г. Екатеринбург, ул. Программирования, д. 17'],
+            'Example Footer', 'gray', 'white'
+            );
+
+        function _for(array){
+            result = '';
+            for(var i in array){
+                result += array[i] + '<br>';
+            }
+            return result;
+        }
+
+        function generateFooter(contacts, title, bgcolor, fontcolor){
+            document.write(`
+                    <footer style="display: flex; justify-content: space-between; align-items: center; background-color: ${bgcolor}; color: ${fontcolor}">
+                        <div style="display: flex; align-items: center; margin: 10px">
+                            ${_for(contacts)}
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin: 10px">
+                            ${title} &copy2023
+                        </div>
+                    </footer>
+            `)
+        }
+    </script>
+</body>
+</html>
